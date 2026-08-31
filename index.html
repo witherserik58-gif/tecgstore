@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <title>TechStore</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0f1115" />
+  <title>TechStore</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <header class="header">
+    <div class="brand">
+      <span class="brand-logo">◈</span>
+      <span class="brand-name">TechStore</span>
+    </div>
+    <a class="manager-btn" href="https://t.me/" target="_blank" rel="noopener">
+      <span class="manager-dot"></span>
+      Менеджермен байланысу
+    </a>
+  </header>
 
-    <h1>👋 TechStore</h1>
+  <main class="container">
+    <section class="hero">
+      <p class="hero-kicker">Жаңа коллекция 2026</p>
+      <h1 class="hero-title">Компьютер техникасы <br /> қолжетімді бағада</h1>
+      <p class="hero-sub">Түпнұсқа бейнекарталар, процессорлар және дайын компьютерлер. Жеткізу — бүкіл Қазақстан бойынша.</p>
+    </section>
 
-    <h2>RTX 5090</h2>
-    <p>850 000 ₸</p>
+    <h2 class="section-title">Санаттар</h2>
+    <section class="grid-c">
+      <article class="box1">
+        <div class="box1-media"><img src="./gpu.png" alt="Бейнекарта" /></div>
+        <div class="box1-body">
+          <h3 class="box1-title">Бейнекарталар</h3>
+          <p class="box1-desc">RTX &amp; Radeon сериялары</p>
+          <span class="box1-tag">24 өнім</span>
+        </div>
+      </article>
+      <article class="box1">
+        <div class="box1-media"><img src="./cpu.png" alt="Процессор" /></div>
+        <div class="box1-body">
+          <h3 class="box1-title">Процессорлар</h3>
+          <p class="box1-desc">Intel &amp; AMD Ryzen</p>
+          <span class="box1-tag">31 өнім</span>
+        </div>
+      </article>
+    </section>
 
-    <button>Сатып алу</button>
+    <h2 class="section-title">Дайын компьютерлер</h2>
+    <section class="ready_computers">
+      <div class="ready-media"><img src="./pc-1.png" alt="Дайын компьютер" /></div>
+      <div class="ready-body">
+        <span class="ready-badge">Хит сатылым</span>
+        <h3 class="ready-title">Gaming Build Pro</h3>
+        <p class="ready-desc">Ryzen 7 · RTX 4070 · 32GB RAM · 1TB SSD</p>
+        <div class="ready-footer">
+          <span class="ready-price">690 000 ₸</span>
+          <button class="buy-btn" type="button">Тапсырыс беру</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="footer">© 2026 TechStore · Telegram дүкені</footer>
+
+  <script>
+    const tg = window.Telegram && window.Telegram.WebApp;
+    if (tg) { tg.ready(); tg.expand(); }
+    document.querySelector('.buy-btn').addEventListener('click', function () {
+      if (tg) {
+        tg.HapticFeedback && tg.HapticFeedback.impactOccurred('medium');
+        tg.showAlert && tg.showAlert('Тапсырысыңыз қабылданды! Менеджер сізбен хабарласады.');
+      } else {
+        alert('Тапсырысыңыз қабылданды!');
+      }
+    });
+  </script>
 </body>
 </html>
