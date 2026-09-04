@@ -245,7 +245,7 @@ function checkout() {
   haptic('medium');
   if (tg && tg.sendData) {
     // Ботқа тапсырыс деректерін жіберу
-    tg.sendData(JSON.stringify(payload));
+    tg.sendData(JSON.stringify(payload.category));
   } else if (tg && tg.showAlert) {
     tg.showAlert(`Тапсырыс қабылданды! Жиыны: ${formatPrice(payload.total)}`);
   } else {
